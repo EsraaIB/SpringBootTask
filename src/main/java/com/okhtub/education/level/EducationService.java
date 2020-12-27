@@ -34,7 +34,7 @@ public class EducationService {
 	}
 
 	// return all education levels as json v2
-	public ArrayList<EducationLevel> getAllEducationLevels2() throws JsonProcessingException {
+	public ArrayList<EducationLevel> getAllEducationLevels2() {
 		ArrayList<EducationLevel> educationList = new ArrayList<>();
 		educationRepo.findAll().forEach(educationList::add);
 		// Sort result by sorting attribute

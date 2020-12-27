@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 
-@RestController
+@Controller
 public class EducationController {
 
 	@Autowired
@@ -24,6 +26,14 @@ public class EducationController {
 	public String getAllEducationLevels() throws JsonProcessingException {
 
 		return educationService.getAllEducationLevels();
+	}
+	
+	@RequestMapping("/home")
+	public String getEducationLevelHome(Model model){
+
+		ArrayList<EducationLevel> allLevels = educationService.getAllEducationLevels2();
+		model.addAttribute("allLevels",allLevels );
+		return "home";
 	}
 
 	// Automatically format json

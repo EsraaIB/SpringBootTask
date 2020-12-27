@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Okhtub</title>
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+			<table class="styled-table">
+				<thead >
+					<tr>
+						<th>ID</th>
+						<th>English Level</th>
+						<th>Arabic Level</th>
+						<th>Sorting</th>
+						<th>Available</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="level : ${allLevels}">
+						<td th:text="${level.id}"></td>
+						<td th:text="${level.englishLevel}"></td>
+						<td th:text="${level.arabicLevel}"></td>
+						<td th:text="${level.sorting}"></td>
+						<td th:text="${level.available}"></td>
+					</tr>
+
+				</tbody>
+			</table>
+		
+
+
+
+
+
+</body>
+
+</html>
