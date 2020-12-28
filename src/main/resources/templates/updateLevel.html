@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Okhtub</title>
+
+<link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+</head>
+
+<body>
+
+	<form th:action="@{/updateLevel}" class="formUpdate"  th:object="${selectedLevel}" method="POST">
+		<h1>Update <br> Education Level</h1>
+	
+		<div class="formcontainer">
+		<div class="container">
+		<label for="id"><strong>ID</strong></label> 
+		<input type="text" th:field="*{id}" readOnly> 
+		<br>
+		<label for="englishLevel"><strong>English Level</strong></label> 
+		<select th:field="*{englishLevel}">
+			<option th:each="i : ${allEnglishLevels}" th:value="${i}" th:text="${i}"></option>
+		</select> 
+		<br>
+		<label for="arablicLevel"><strong>Arabic Level</strong></label> 
+		<select th:field="*{arabicLevel}">
+			<option th:each="i : ${allArabicLevels}" th:value="${i}" th:text="${i}"></option>
+		</select> 
+		<br>
+		<label for="available"><strong>Available</strong></label> 
+		<select th:field="*{available}">
+			<option value="0">0</option>
+			<option value="1">1</option>
+		</select> 
+		<br>
+		<label for="sorting"><strong>Sorting</strong></label> 
+		<input type="number" th:field="*{sorting}" >
+        </div>
+	    <button type="submit">
+			<strong>Update</strong>
+		</button>
+		<div  align="center" th:text="${Updatemessage}"
+				Style="color: #0F0;"></div>
+		<div  align="center" th:text="${exception}"
+				Style="color: #AA0114;"></div>
+			
+	</form>
+
+
+</body>
+
+</html>

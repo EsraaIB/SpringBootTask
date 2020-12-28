@@ -1,5 +1,4 @@
 package com.okhtub.education.level;
-import com.okhtub.user.*;
 
 import javax.persistence.*;
 
@@ -12,16 +11,14 @@ public class EducationLevel {
 	private int sorting , available;
 	private String englishLevel , arabicLevel;
 	
-	//tells Spring don't map that again , already mapped 
-	/*@OneToOne(mappedBy = "educationLevel")
-	private MyUser user;*/
+
 	
 	public int getId() {
 		return ID;
 	}
-	public void setId(int id) {
+	/*public void setId(int id) {
 		this.ID = id;
-	}
+	}*/
 	public int getSorting() {
 		return sorting;
 	}
@@ -46,12 +43,6 @@ public class EducationLevel {
 	public void setArabicLevel(String arabicLevel) {
 		this.arabicLevel = arabicLevel;
 	}
-/*	public MyUser getUser() {
-		return null;
-	}
-	public void setUser(MyUser user) {
-		this.user = user;
-	}*/
 
 	@Override
 	public String toString() {

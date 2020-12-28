@@ -59,10 +59,51 @@ public class EducationService {
 
 		Optional<EducationLevel> obj=educationRepo.findById(levelId);
 		if(obj.isPresent())
-			return educationRepo.save(educationLevel);
+		{
+			System.out.println(obj.get().getId());
+			obj.get().setEnglishLevel(educationLevel.getEnglishLevel());
+			obj.get().setArabicLevel(educationLevel.getArabicLevel());
+			obj.get().setAvailable(educationLevel.getAvailable());
+			obj.get().setSorting(educationLevel.getSorting());
+
+			return educationRepo.save(obj.get());
+		}
 		else
 			return null;
 
+	}
+	
+	public EducationLevel getEducationLevelById(int id) {
+		
+		Optional<EducationLevel> level=educationRepo.findById(id);
+		if(level.isPresent())
+			return level.get();
+		else 
+			return null;
+		
+	}
+
+	public List<String> getAllEnglishLevels() {
+		List<String> allEnglishLevels=new ArrayList<>();
+		allEnglishLevels.add("Fluent");
+		allEnglishLevels.add("VeryGood");
+		allEnglishLevels.add("Good");
+		allEnglishLevels.add("Fair");
+		allEnglishLevels.add("Weak");
+		return allEnglishLevels;
+	}
+	public List<String> getAllArabicLevels() {
+		List<String> allArabicLevels=new ArrayList<>();
+		allArabicLevels.add("ممتاز");
+		allArabicLevels.add("جيد جدا");
+		allArabicLevels.add("جيد");
+		allArabicLevels.add("مقبول");
+		allArabicLevels.add("ضعيف");
+		return allArabicLevels;
+	}
+
+	public void deleteEducationLevel(int idint) {
+		educationRepo.deleteById(idint);
 	}
 
 }

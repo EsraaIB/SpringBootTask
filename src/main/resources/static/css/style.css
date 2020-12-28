@@ -1,30 +1,76 @@
 /*********TABLE************/
 .styled-table {
-    border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 0.9em;
-    font-family: sans-serif;
-    width: 100%;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+	border-collapse: collapse;
+	margin: 25px 0;
+	font-size: 0.9em;
+	font-family: sans-serif;
+	width: 100%;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
+
 .styled-table thead tr {
-    background-color: #7c5295;
-    color: #ffffff;
-    text-align: left;
+	background-color: #7c5295;
+	color: #ffffff;
+	text-align: left;
 }
-.styled-table th,
-.styled-table td {
-    padding: 12px 15px;
+
+.styled-table th, .styled-table td {
+	padding: 12px 15px;
 }
+
 .styled-table tbody tr {
-    border-bottom: 1px solid #dddddd;
+	border-bottom: 1px solid #dddddd;
 }
 
 .styled-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
+	background-color: #f3f3f3;
 }
 
 .styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #7c5295;
+	border-bottom: 2px solid #7c5295;
 }
 /*************END OF TABLE*****************/
+
+
+.formUpdate {
+	border: 5px solid #f1f1f1;
+}
+
+input[type=text] , select  , input[type=number] {
+	width: 100%;
+	padding: 16px 8px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+}
+
+
+button {
+	background-color: #7c5295;
+	color: white;
+	padding: 14px 0;
+	margin: 10px 0;
+	border: none;
+	cursor: grab;
+	width: 48%;
+}
+
+h1 {
+	text-align: center;
+	fone-size: 18;
+}
+
+button:hover {
+	opacity: 0.8;
+}
+
+.formcontainer {
+	text-align: center;
+	margin: 24px 50px 12px;
+}
+
+.container {
+	padding: 16px 0;
+	text-align: left;
+}
